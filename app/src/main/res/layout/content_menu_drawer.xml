@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ickarus.zordon.menuDrawer"
+    tools:showIn="@layout/app_bar_menu_drawer"
+    android:background="#C8C8C8">
+
+    <!--  Buttons for schedule, planner, archive-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/DashButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dashboard"
+            android:gravity="left"
+            android:paddingLeft="30dp"
+            android:background="@null"/>
+
+
+        <Button
+            android:id="@+id/ScheduleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Schedule"
+            android:gravity="left"
+            android:paddingLeft="30dp"
+            android:background="@null"/>
+
+        <Button
+            android:id="@+id/PlannerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Planner"
+            android:gravity="left"
+            android:paddingLeft="30dp"
+            android:background="@null"/>
+
+        <Button
+            android:id="@+id/ArchiveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Archive"
+            android:gravity="left"
+            android:paddingLeft="30dp"
+            android:background="@null"
+            />
+
+        <Button
+            android:id="@+id/SettingsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:gravity="left"
+            android:paddingLeft="30dp"
+            android:background="@null"
+            android:drawableLeft="@drawable/ic_menu_manage"/>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
