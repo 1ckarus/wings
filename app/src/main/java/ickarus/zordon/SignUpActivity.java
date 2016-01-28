@@ -1,13 +1,18 @@
 package ickarus.zordon;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.KeyEvent;
+import android.widget.Button;
+import android.widget.CompoundButton;
 
 public class SignUpActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,14 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
+        Button gotoLoginButton= (Button)findViewById(R.id.goToLoginButton);
 
+        gotoLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               startActivity(new Intent(SignUpActivity.this, MainActivity.class)) ;
+            }
+        });
+
+}
 }
