@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
 
+
         >
 
         <TextView
@@ -37,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
+
             >
         </EditText>
 
@@ -52,10 +54,11 @@
 
         </EditText>
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_gravity="bottom"
+
 
 
             >
@@ -67,21 +70,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+
+
+
             android:text="@string/log_in"
                 android:background="#0099FF"
                 android:textColor="#FFFFFF"/>
 
-            <TextView
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="don't have an account, join us"
-
-                />
 
             <Button
                 android:layout_gravity="center"
                 android:id="@+id/signupbutton"
+                android:layout_marginLeft="85dp"
+                android:layout_marginRight="5dp"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sign_up"
