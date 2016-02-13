@@ -22,16 +22,27 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // this is for the sign up button
 
         Button sbutton = (Button)findViewById(R.id.signupbutton);
         sbutton.setOnClickListener(new View.OnClickListener() {
-            @Override 
+            @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, SignUpActivity.class));
             }
 
         });
 
+        // this is for the login button
+
+        Button loginButon = (Button) findViewById(R.id.loginbutton);
+        loginButon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, dashBoard.class));
+            }
+
+        });
 
 
 
