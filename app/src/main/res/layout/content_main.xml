@@ -11,6 +11,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="ickarus.zordon.MainActivity"
     tools:showIn="@layout/activity_main"
+    android:background="@drawable/batman_new"
+
     >
 
 
@@ -23,22 +25,54 @@
 
         >
 
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:textSize="20sp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="School can be hard, let us help" />
+            android:orientation="vertical"
+            android:paddingBottom="30sp"
+            >
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:text="Keep School Simple with"
+                android:paddingLeft="60sp"
+                android:textColor="#ffffff"
+                />
 
 
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:textSize="60sp"
+                android:layout_height="wrap_content"
+                android:textColor="#8904B1"
+                android:gravity="center"
+                android:text="Zordon"
+                android:textStyle="bold"
+                android:typeface="sans"
+                android:paddingLeft="60sp"
+                />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20sp">
 
         <EditText
             android:id="@+id/email_login"
             android:hint="@string/user_hint"
+            android:textColorHint="#d9d9d9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-
+            android:padding="20sp"
+            android:textColor="#ffffff"
             >
         </EditText>
 
@@ -46,13 +80,19 @@
         <EditText
             android:id="@+id/password_login"
             android:hint="@string/password_hint"
+            android:textColorHint="#d9d9d9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:gravity="center_vertical"
+            android:textColor="#ffffff"
             >
-
         </EditText>
+
+    </LinearLayout>
+
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -74,7 +114,7 @@
 
 
             android:text="@string/log_in"
-                android:background="#0099FF"
+                android:background="#8904B1"
                 android:textColor="#FFFFFF"/>
 
 
@@ -87,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sign_up"
-                android:background="#0099FF"
+                android:background="#8904B1"
                 android:textColor="#FFFFFF"/>
                 />
 
