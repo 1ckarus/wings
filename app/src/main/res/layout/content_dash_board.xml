@@ -25,6 +25,7 @@
             android:text="logout"
             android:textColor="#ffffff"
             android:background="#0099FF"/>
+
         <Button
             android:layout_marginLeft="20sp"
             android:id="@+id/menuButton"
@@ -34,6 +35,19 @@
             android:textColor="#ffffff"
             android:background="#0099FF"
             />
+
+        <Button
+            android:layout_marginLeft="20sp"
+            android:id="@+id/sButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Schedule"
+            android:textColor="#ffffff"
+            android:background="#0099FF"
+            />
+
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -71,7 +85,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            
+
             />
 
 

@@ -22,6 +22,24 @@ public class dashBoard extends AppCompatActivity {
 
 
         Button menuButton= (Button) findViewById(R.id.menuButton);
+        Button tasks = (Button) findViewById(R.id.logout_button);
+        Button button3= (Button) findViewById(R.id.sButton);
+
+        button3.setOnClickListener(new View.OnClickListener() {
+                                       @Override public void onClick(View v) {
+                                           startActivity(new Intent(dashBoard.this, Schedule.class));
+                                       }
+                                   }
+
+        );
+
+        tasks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(dashBoard.this, Tasks.class));
+            }
+
+        });
 
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
