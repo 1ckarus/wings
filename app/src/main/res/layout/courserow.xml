@@ -14,13 +14,14 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:paddingLeft="20sp"
+        android:paddingLeft="60sp"
         android:id="@+id/courScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text=""
         />
+
 
 
 </LinearLayout>

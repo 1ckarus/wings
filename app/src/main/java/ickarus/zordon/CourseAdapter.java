@@ -27,7 +27,7 @@ public class CourseAdapter extends ArrayAdapter <course>{
     public View getView(int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-        convertView = inflater.inflate(R.layout.row, parent, false);
+        convertView = inflater.inflate(R.layout.courserow, parent, false);
         TextView name = (TextView) convertView.findViewById(R.id.coursName);
         TextView score = (TextView) convertView.findViewById(R.id.courScore);
         name.setText(courses.get(position).getCourseName());

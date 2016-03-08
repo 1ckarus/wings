@@ -31,17 +31,26 @@ public class course {
         }
         return sum/totalWeight;
     }
-
-    public void addCourseItem(String name, double weight, ArrayList<Double> scores)
+    public void addScore(String name, double score)
     {
+        for (int i=0;i< list.size();i++)
+        {
+            if(list.get(i).getName().equals(name))
+            {
+                list.get(i).addItem(score);
+            }
+        }
+    }
+
+    public void addCourseItem(String name, double weight)
+        {
         courseItem courseItem= new courseItem();
         courseItem.setName(name);
         courseItem.setWeight(weight);
 
         // here i think I want a loop that will usen an array to add the scored
         //courseItem.addItem(20);
-        for(int i=0; i< scores.size();i++)
-            courseItem.addItem(scores.get(i));
+
         list.add(courseItem);
 
     }

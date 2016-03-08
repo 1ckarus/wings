@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -46,7 +47,42 @@ public class Schedule extends AppCompatActivity {
                             public void onClick(DialogInterface dialog,int id) {
                                 // if this button is clicked, close
                                 // current activity
-                                Log.i("Course Added","YES");
+
+                               final  course course= new course();
+                                Log.i("Course created", "YES");
+                                // ask for coursname
+                                AlertDialog.Builder alert = new AlertDialog.Builder(context);
+
+                                alert.setTitle("Course Name");
+                                alert.setMessage("Add Course Name");
+
+                                // Set an EditText view to get user input
+                                final EditText input = new EditText(context);
+                                alert.setView(input);
+
+                                alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int whichButton) {
+                                        String value = input.getText().toString();
+                                        course.setCourseName(value);
+                                        Log.i("Course name added", "YES");
+                                        // Do something with value!
+                                    }
+                                });
+
+
+                                alert.show();
+
+
+
+
+                                course.addCourseItem("quiz", 30);
+                                Log.i("Course item Added", "YES");
+                                course.addScore("quiz", 75);
+                                Log.i("score Added", "YES");
+
+                                courseList.add(course);
+
+                                courseAdapter.notifyDataSetChanged();
                             }
                         })
                         .setNegativeButton("No",new DialogInterface.OnClickListener() {
@@ -65,5 +101,29 @@ public class Schedule extends AppCompatActivity {
 
             }
         });
+    }
+    public static void addCourseItem(final course course, Context context)
+    {
+        AlertDialog.Builder alert = new AlertDialog.Builder(context);
+
+        alert.setTitle("Course Name");
+        alert.setMessage("Add Course Name");
+
+        // Set an EditText view to get user input
+        final EditText input = new EditText(context);
+        alert.setView(input);
+
+        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String value = input.getText().toString();
+                course.setCourseName(value);
+                Log.i("Course name added", "YES");
+                // Do something with value!
+            }
+        });
+
+
+        alert.show();
+
     }
 }
