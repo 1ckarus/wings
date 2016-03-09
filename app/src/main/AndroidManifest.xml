@@ -45,7 +45,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ickarus.zordon.MainActivity" />
         </activity>
-        <activity android:name=".Tasks" />
+        <activity android:name=".Tasks"
+            android:screenOrientation="portrait"/>
         <activity android:name=".Schedule"></activity>
     </application>
 

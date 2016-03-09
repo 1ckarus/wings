@@ -36,10 +36,11 @@ public class Tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String getTask = taskName.getText().toString();
-                tasks.add(getTask);
-                taskName.setText("");
-                adapter.notifyDataSetChanged();
-
+                if (!getTask.isEmpty()) {
+                    tasks.add(getTask);
+                    taskName.setText("");
+                    adapter.notifyDataSetChanged();
+                }
             }
         });
 
