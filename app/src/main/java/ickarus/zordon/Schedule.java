@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -74,11 +75,7 @@ public class Schedule extends AppCompatActivity {
 
 
 
-
-                                course.addCourseItem("quiz", 30);
-                                Log.i("Course item Added", "YES");
-                                course.addScore("quiz", 75);
-                                Log.i("score Added", "YES");
+                                addCourseItem(course, context, courseAdapter);
 
                                 courseList.add(course);
 
@@ -102,28 +99,68 @@ public class Schedule extends AppCompatActivity {
             }
         });
     }
-    public static void addCourseItem(final course course, Context context)
+    public static void addCourseItem(final course course, final Context context, final CourseAdapter courseAdapter)
     {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
 
-        alert.setTitle("Course Name");
-        alert.setMessage("Add Course Name");
+        alert.setTitle("Item Name");
+        alert.setMessage("Add Course Item and Weight");
+
+        LinearLayout layout= new LinearLayout(context);
+        layout.setOrientation(LinearLayout.VERTICAL);
 
         // Set an EditText view to get user input
-        final EditText input = new EditText(context);
-        alert.setView(input);
+        final EditText itemName = new EditText(context);
+        itemName.setHint("Quizzes, Exam, etc");
+        layout.addView(itemName);
+
+        final EditText itemScore= new EditText(context);
+        itemScore.setHint("20 for 20%");
+        layout.addView(itemScore);
+        alert.setView(layout);
 
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                String value = input.getText().toString();
-                course.setCourseName(value);
+                String value = itemName.getText().toString();
+                double weight= Double.parseDouble(itemScore.getText().toString());
+                course.addCourseItem(value, weight);
+
+                addItemScore(course, value, context);
                 Log.i("Course name added", "YES");
-                // Do something with value!
+                courseAdapter.notifyDataSetChanged();// Do something with value!
             }
         });
 
 
         alert.show();
 
+    }
+
+    public static void addItemScore(final course course,final String name, Context context)
+    {
+        AlertDialog.Builder alert = new AlertDialog.Builder(context);
+
+        alert.setTitle("Item Score");
+        alert.setMessage("Add Your Score");
+
+        // Set an EditText view to get user input
+        final EditText itemSC = new EditText(context);
+        itemSC.setHint("enter score here");
+
+        alert.setView(itemSC);
+
+
+        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                double score= Double.parseDouble(itemSC.getText().toString());
+                course.addScore(name, score);
+
+                Log.i("Course name added", "YES");
+
+            }
+        });
+
+
+        alert.show();
     }
 }
